@@ -10,4 +10,4 @@ Um algoritmo em C utilizando o conteúdo de grafos para resolver um sudoku dado
 |Matrícula | Aluno |
 | -- | -- |
 | 20/0059980  |  Pedro Miguel Martins de Oliveira dos Santos |
-
+| 21/1062910  |  Daniel Nunes Duarte  |
