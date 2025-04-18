@@ -54,3 +54,23 @@ bool resolverSudoku(int tabela[N][N]) {
             break;
         }
     }
+ // Se não houver células vazias, o Sudoku está resolvido
+    if (!vazioEncontrado) {
+        return true;
+    }
+    // Tenta preencher a célula vazia com números de 1 a 9
+    for (int num = 1; num <= 9; num++) {
+        if (!numerosIguais(tabela, lin, col, num)) {
+            tabela[lin][col] = num;
+            // Chama recursivamente para continuar a resolução
+            if (resolverSudoku(tabela)) {
+                return true;
+            }
+            // Se a recursão não der certo, volta a posição original
+            tabela[lin][col] = 0;
+        }
+    }
+    // Retorna falso se não conseguir resolver
+    return false;
+}
+
