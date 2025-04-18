@@ -24,3 +24,33 @@ bool numerosIguais(int tabela[N][N], int lin, int col, int num) {
             return true;
         }
     }
+    // Verifica se o número já existe no bloco 3x3
+    int initLin = lin - lin % 3;
+    int initCol = col - col % 3;
+    
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            if (tabela[i + initLin][j + initCol] == num) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+// Resolve a tabela de sudoku
+bool resolverSudoku(int tabela[N][N]) {
+    int lin, col;
+    bool vazioEncontrado = false;
+    // Encontra uma célula vazia na tabela
+    for (lin = 0; lin < N; lin++) {
+        for (col = 0; col < N; col++) {
+            if (tabela[lin][col] == 0) {
+                vazioEncontrado = true;
+                break;
+            }
+        }
+        if (vazioEncontrado) {
+            break;
+        }
+    }
